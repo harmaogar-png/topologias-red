@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Topología Estrella | NetTopology.Edu</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Navegación Superior -->
+    <nav class="top-nav">
+        <div class="logo">NetTopology<span>.Edu</span></div>
+        <a href="index.html" class="back-btn"><i class="fas fa-arrow-left"></i> Volver al Menú</a>
+    </nav>
+
+    <!-- Encabezado -->
+    <header class="topic-header">
+        <div class="container">
+            <h1><i class="fas fa-star"></i> Topología Estrella</h1>
+            <p class="subtitle">El estándar de oro en redes LAN modernas</p>
+        </div>
+    </header>
+
+    <main class="container detail-layout">
+        
+        <!-- Columna Izquierda: Contenido Educativo -->
+        <section class="content-column">
+            
+            <!-- 1. Definición Técnica -->
+            <article class="edu-card">
+                <h2><i class="fas fa-book-open"></i> ¿Qué es exactamente?</h2>
+                <p>
+                    La topología estrella es una arquitectura de red donde <strong>todos los nodos</strong> (computadoras, impresoras, servidores, cámaras IP) se conectan de forma individual y exclusiva a un <strong>dispositivo central de concentración</strong>, típicamente un Switch o Hub.
+                </p>
+                <p>
+                    A diferencia de la topología Bus, aquí no existe un cable compartido. Cada dispositivo tiene su propio segmento de cable UTP hacia el centro. Esto significa que el tráfico de datos no "choca" en el medio, sino que es gestionado inteligentemente por el switch mediante direcciones MAC.
+                </p>
+            </article>
+
+            <!-- 2. Ventajas Operativas (Punto clave del profe) -->
+            <article class="edu-card highlight-card">
+                <h2><i class="fas fa-tools"></i> ¿Por qué es fácil de instalar y gestionar?</h2>
+                <p>Como ingeniero o administrador de red, esta topología es tu mejor aliada por estas razones:</p>
+                <ul class="feature-list">
+                    <li>
+                        <strong><i class="fas fa-check-circle"></i> Centralización del Control:</strong> 
+                        Todo el tráfico pasa por un solo punto. Puedes monitorear, filtrar o bloquear dispositivos desde una sola consola de gestión del switch.
+                    </li>
+                    <li>
+                        <strong><i class="fas fa-plug"></i> Instalación Modular:</strong> 
+                        Agregar un nuevo usuario es tan simple como conectar un cable a un puerto libre. No necesitas detener la red ni modificar el cableado existente de otros usuarios.
+                    </li>
+                    <li>
+                        <strong><i class="fas fa-shield-alt"></i> Aislamiento de Fallas:</strong> 
+                        Si el cable de la PC-3 se daña, solo la PC-3 deja de funcionar. El resto de la oficina sigue operando al 100%. Esto reduce drásticamente el tiempo de inactividad (downtime).
+                    </li>
+                    <li>
+                        <strong><i class="fas fa-search"></i> Diagnóstico Rápido:</strong> 
+                        Los switches modernos tienen luces LED por puerto. Si un puerto está apagado o en ámbar, sabes exactamente dónde está el problema en segundos.
+                    </li>
+                </ul>
+            </article>
+
+            <!-- 3. Caso de Uso Real -->
+            <article class="edu-card">
+                <h2><i class="fas fa-building"></i> ¿Dónde se usa en la vida real?</h2>
+                <p>
+                    Es la topología predominante en <strong>oficinas corporativas, universidades, hospitales y centros de datos</strong>. 
+                </p>
+                <p>
+                    <em>Ejemplo práctico:</em> En un edificio de 10 pisos, cada piso tiene un cuarto de telecomunicaciones (IDF) con un switch. Todas las PCs de ese piso se conectan a ese switch en estrella. Luego, esos switches se conectan al switch core del sótano. Esta jerarquía permite escalar la red a miles de usuarios manteniendo el orden.
+                </p>
+            </article>
+
+        </section>
+
+        <!-- Columna Derecha: Visual y Video -->
+        <aside class="media-column">
+            
+            <!-- Diagrama Principal -->
+            <div class="media-card">
+                <h3>Diagrama Físico</h3>
+                <img src="estrella.png" alt="Diagrama Topología Estrella" class="main-diagram">
+                <p class="caption">Observa cómo cada nodo tiene un camino dedicado al switch central.</p>
+            </div>
+
+            <!-- Video Explicativo (TU VIDEO YA INTEGRADO) -->
+            <div class="media-card video-container">
+                <h3>Video Explicativo</h3>
+                <iframe 
+                    width="100%" 
+                    height="315" 
+                    src="https://www.youtube.com/embed/ymNuOHV7qx0" 
+                    title="Topología Estrella Explicada - Redes LAN" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+                <p class="caption">Explicación técnica completa sobre funcionamiento y ventajas.</p>
+            </div>
+
+            <!-- Dato Técnico Pro -->
+            <div class="media-card fun-fact">
+                <h3><i class="fas fa-lightbulb"></i> Dato Técnico Avanzado</h3>
+                <p>
+                    Aunque el dispositivo central es un punto único de fallo, en entornos críticos se usan <strong>switches apilados (Stacking)</strong> o protocolos como <strong>HSRP/VRRP</strong> para tener redundancia. Así, si un switch falla, otro toma el control en milisegundos sin que los usuarios lo noten.
+                </p>
+            </div>
+
+        </aside>
+
+    </main>
+
+    <footer>
+        <p>Trabajo Académico - Ingeniería de Sistemas | Harold García | 2026</p>
+    </footer>
+
+</body>
+</html>

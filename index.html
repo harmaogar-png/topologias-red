@@ -3,40 +3,151 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Topologías de Red Físicas | Harold García</title>
+    <title>Topologías de Red Físicas | NetTopology.Edu</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <header>
+
+    <!-- Navegación Superior -->
+    <nav class="top-nav">
         <div class="logo">NetTopology<span>.Edu</span></div>
-        <p class="subtitle">Estrella • Malla • Bus • Anillo</p>
+        <div class="nav-links">
+            <a href="#inicio" class="active">Inicio</a>
+            <a href="#topologias">Topologías</a>
+            <a href="#normativa">Normativa TIA</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section: Bienvenida Educativa -->
+    <header id="inicio" class="hero-section">
+        <div class="container hero-content">
+            <h1>Topologías de Red Físicas</h1>
+            <p class="hero-subtitle">Guía interactiva para estudiantes de Ingeniería de Sistemas</p>
+            <p class="hero-desc">
+                Explora las arquitecturas Estrella, Malla, Bus y Anillo con enfoque técnico, 
+                implementación física según norma TIA-569 y recursos multimedia educativos.
+            </p>
+            <a href="#topologias" class="btn-primary">Comenzar Aprendizaje <i class="fas fa-arrow-down"></i></a>
+        </div>
     </header>
 
-    <main>
-        <nav class="topology-nav">
-            <button class="nav-btn active" data-target="estrella">⭐ Estrella</button>
-            <button class="nav-btn" data-target="malla">🕸️ Malla</button>
-            <button class="nav-btn" data-target="bus">🚌 Bus</button>
-            <button class="nav-btn" data-target="anillo">💍 Anillo</button>
-        </nav>
+    <!-- Sección de Topologías (Menú Interactivo) -->
+    <section id="topologias" class="container section-padding">
+        <div class="section-header">
+            <h2><i class="fas fa-project-diagram"></i> Selecciona una Topología</h2>
+            <p>Cada módulo incluye definición técnica, ventajas operativas, caso de uso real y video explicativo.</p>
+        </div>
 
-        <section id="content-display" class="content-card">
-            <div class="visual-area">
-                <img id="topo-img" src="" alt="Diagrama Topología">
+        <div class="menu-grid">
+            <!-- Tarjeta Estrella -->
+            <div class="card topology-card">
+                <div class="card-icon star-icon"><i class="fas fa-star"></i></div>
+                <h3>Topología Estrella</h3>
+                <p>Conexión centralizada mediante switch. Fácil gestión, aislamiento de fallas y estándar en LAN modernas.</p>
+                <ul class="card-tags">
+                    <li><i class="fas fa-check"></i> TIA-569</li>
+                    <li><i class="fas fa-video"></i> Video incluido</li>
+                </ul>
+                <a href="estrella.html" class="btn-detail">Explorar Módulo →</a>
             </div>
-            <div class="info-area">
-                <h2 id="topo-title">Selecciona una Topología</h2>
-                <p id="topo-desc">Explora las características de cada red física.</p>
-                <ul id="topo-features"></ul>
-            </div>
-        </section>
-    </main>
 
+            <!-- Tarjeta Malla -->
+            <div class="card topology-card">
+                <div class="card-icon mesh-icon"><i class="fas fa-project-diagram"></i></div>
+                <h3>Topología Malla</h3>
+                <p>Máxima redundancia y tolerancia a fallos. Cada nodo conectado a todos los demás. Ideal para backbones críticos.</p>
+                <ul class="card-tags">
+                    <li><i class="fas fa-shield-alt"></i> Alta disponibilidad</li>
+                    <li><i class="fas fa-video"></i> Video incluido</li>
+                </ul>
+                <a href="malla.html" class="btn-detail">Explorar Módulo →</a>
+            </div>
+
+            <!-- Tarjeta Bus -->
+            <div class="card topology-card">
+                <div class="card-icon bus-icon"><i class="fas fa-grip-lines-vertical"></i></div>
+                <h3>Topología Bus</h3>
+                <p>Cable backbone compartido. Económica pero vulnerable. Base histórica de Ethernet 10Base2/10Base5.</p>
+                <ul class="card-tags">
+                    <li><i class="fas fa-history"></i> Legado industrial</li>
+                    <li><i class="fas fa-video"></i> Video incluido</li>
+                </ul>
+                <a href="bus.html" class="btn-detail">Explorar Módulo →</a>
+            </div>
+
+            <!-- Tarjeta Anillo -->
+            <div class="card topology-card">
+                <div class="card-icon ring-icon"><i class="fas fa-ring"></i></div>
+                <h3>Topología Anillo</h3>
+                <p>Flujo determinista por paso de testigo (Token Passing). Usada en FDDI, SONET y automatización industrial.</p>
+                <ul class="card-tags">
+                    <li><i class="fas fa-clock"></i> Latencia fija</li>
+                    <li><i class="fas fa-video"></i> Video incluido</li>
+                </ul>
+                <a href="anillo.html" class="btn-detail">Explorar Módulo →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Normativa TIA-569 (Valor Agregado Educativo) -->
+    <section id="normativa" class="normativa-section">
+        <div class="container">
+            <div class="normativa-content">
+                <h2><i class="fas fa-book"></i> Contexto Físico: Norma TIA-569</h2>
+                <p>
+                    Las topologías no existen en el vacío. Para implementarlas correctamente, debes conocer la 
+                    <strong>Norma TIA-569</strong> sobre espacios de telecomunicaciones:
+                </p>
+                <div class="normativa-grid">
+                    <div class="norma-item">
+                        <i class="fas fa-door-open"></i>
+                        <h4>Puerta de Acceso</h4>
+                        <p>Abre hacia afuera, sin umbral, mínimo 0.91m ancho × 2.1m alto. Cierre automático.</p>
+                    </div>
+                    <div class="norma-item">
+                        <i class="fas fa-fingerprint"></i>
+                        <h4>Doble Factor</h4>
+                        <p>Tarjeta RFID + Huella dactilar. Registro obligatorio de cada ingreso en bitácora.</p>
+                    </div>
+                    <div class="norma-item">
+                        <i class="fas fa-video"></i>
+                        <h4>CCTV Obligatorio</h4>
+                        <p>Cámara apuntando al rack y puerta. Auditoría visual 24/7 del cuarto de telecomunicaciones.</p>
+                    </div>
+                    <div class="norma-item">
+                        <i class="fas fa-fire-extinguisher"></i>
+                        <h4>Firestop</h4>
+                        <p>Sellado ignífugo en pasamuros. Evita propagación de fuego entre pisos por canalizaciones.</p>
+                    </div>
+                </div>
+                <p class="normativa-note">
+                    <em>Este conocimiento es esencial para cualquier ingeniero que diseñe o audite infraestructura de red.</em>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer>
-        <p>Trabajo Académico - Ingeniería de Sistemas | 2026</p>
+        <div class="container footer-content">
+            <div class="footer-info">
+                <h3>NetTopology.Edu</h3>
+                <p>Material educativo desarrollado para el curso de Cableado Estructurado.</p>
+                <p><strong>Autor:</strong> Harold Mauricio García Ortiz</p>
+                <p><strong>Institución:</strong> Corporación Unificada Nacional (CUN)</p>
+                <p><strong>Año:</strong> 2026</p>
+            </div>
+            <div class="footer-contact">
+                <p><i class="fas fa-envelope"></i> harold.garciao@cun.edu.co</p>
+                <p><i class="fas fa-user-tie"></i> Ingeniero de Sistemas | Líder Funcional WMS</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 NetTopology.Edu - Todos los derechos reservados | Trabajo Académico</p>
+        </div>
     </footer>
 
-    <script src="script.js"></script>
 </body>
 </html>

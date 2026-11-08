@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Topología Malla | NetTopology.Edu</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Navegación Superior -->
+    <nav class="top-nav">
+        <div class="logo">NetTopology<span>.Edu</span></div>
+        <a href="index.html" class="back-btn"><i class="fas fa-arrow-left"></i> Volver al Menú</a>
+    </nav>
+
+    <!-- Encabezado -->
+    <header class="topic-header">
+        <div class="container">
+            <h1><i class="fas fa-project-diagram"></i> Topología Malla</h1>
+            <p class="subtitle">Máxima redundancia y tolerancia a fallos</p>
+        </div>
+    </header>
+
+    <main class="container detail-layout">
+        
+        <!-- Columna Izquierda: Contenido Educativo -->
+        <section class="content-column">
+            
+            <!-- 1. Definición Técnica -->
+            <article class="edu-card">
+                <h2><i class="fas fa-book-open"></i> ¿Qué es exactamente?</h2>
+                <p>
+                    La topología malla es una arquitectura donde <strong>cada nodo está conectado directamente a todos los demás nodos</strong> de la red. Existen dos variantes:
+                </p>
+                <ul style="margin-left: 1.5rem; margin-bottom: 1rem;">
+                    <li><strong>Malla Completa:</strong> Cada dispositivo tiene un enlace dedicado con todos los demás (N*(N-1)/2 conexiones).</li>
+                    <li><strong>Malla Parcial:</strong> Solo algunos nodos críticos tienen múltiples conexiones redundantes.</li>
+                </ul>
+                <p>
+                    Esta estructura garantiza que siempre exista al menos una ruta alternativa si un enlace o nodo falla, haciendo que la red sea prácticamente inmune a interrupciones por fallos físicos.
+                </p>
+            </article>
+
+            <!-- 2. Ventajas Operativas -->
+            <article class="edu-card highlight-card">
+                <h2><i class="fas fa-shield-alt"></i> ¿Por qué es la más confiable?</h2>
+                <p>En entornos donde la continuidad operativa es crítica, la malla es insustituible:</p>
+                <ul class="feature-list">
+                    <li>
+                        <strong><i class="fas fa-check-circle"></i> Redundancia Total:</strong> 
+                        Si se corta un cable o falla un router, los protocolos de enrutamiento (OSPF, BGP) recalculan automáticamente la mejor ruta alterna en milisegundos. Los usuarios no perciben la falla.
+                    </li>
+                    <li>
+                        <strong><i class="fas fa-lock"></i> Seguridad Física Mejorada:</strong> 
+                        Un atacante necesitaría interceptar múltiples enlaces simultáneamente para comprometer la comunicación. Es mucho más difícil que en Bus o Estrella.
+                    </li>
+                    <li>
+                        <strong><i class="fas fa-tachometer-alt"></i> Alto Rendimiento:</strong> 
+                        Al tener enlaces dedicados entre nodos, no hay contención por el medio compartido. El ancho de banda es consistente incluso bajo alta carga.
+                    </li>
+                    <li>
+                        <strong><i class="fas fa-tools"></i> Mantenimiento sin Downtime:</strong> 
+                        Puedes reemplazar cables, switches o routers uno por uno mientras la red sigue operando con las rutas alternas. Ideal para mantenimiento programado.
+                    </li>
+                </ul>
+            </article>
+
+            <!-- 3. Caso de Uso Real -->
+            <article class="edu-card">
+                <h2><i class="fas fa-server"></i> ¿Dónde se usa en la vida real?</h2>
+                <p>
+                    Se implementa en infraestructuras donde <strong>un segundo de inactividad cuesta millones</strong>:
+                </p>
+                <ul style="margin-left: 1.5rem;">
+                    <li><strong>Backbones de Internet:</strong> Los ISP conectan sus routers core en malla completa para garantizar que el tráfico siempre llegue a destino.</li>
+                    <li><strong>Centros de Datos Tier IV:</strong> Servidores y storage están interconectados con múltiples paths de fibra óptica.</li>
+                    <li><strong>Redes Militares y de Emergencia:</strong> Comunicaciones tácticas que deben funcionar incluso si parte de la infraestructura es destruida.</li>
+                    <li><strong>Redes IoT Industriales:</strong> Sensores en plantas químicas o petroleras donde la pérdida de datos puede causar accidentes.</li>
+                </ul>
+            </article>
+
+        </section>
+
+        <!-- Columna Derecha: Visual y Video -->
+        <aside class="media-column">
+            
+            <!-- Diagrama Principal -->
+            <div class="media-card">
+                <h3>Diagrama Físico</h3>
+                <img src="malla.png" alt="Diagrama Topología Malla" class="main-diagram">
+                <p class="caption">Cada nodo tiene múltiples caminos hacia los demás. Observa la densidad de conexiones.</p>
+            </div>
+
+            <!-- Video Explicativo -->
+            <div class="media-card video-container">
+                <h3>Video Explicativo</h3>
+                <iframe 
+                    width="100%" 
+                    height="315" 
+                    src="https://www.youtube.com/embed/SBjcPuYWpHA" 
+                    title="Topología Malla Explicada - Redes" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+                <p class="caption">Visualización de redundancia y rutas alternativas en tiempo real.</p>
+            </div>
+
+            <!-- Dato Técnico Pro -->
+            <div class="media-card fun-fact">
+                <h3><i class="fas fa-lightbulb"></i> Dato Técnico Avanzado</h3>
+                <p>
+                    En una malla completa de <strong>N nodos</strong>, se necesitan <strong>N×(N-1)/2</strong> enlaces físicos. Para 10 nodos son 45 cables; para 20 nodos son 190. Por eso en la práctica se usa <strong>malla parcial</strong>: solo los nodos críticos (routers core, firewalls) tienen múltiples uplinks, mientras los endpoints usan estrella hacia esos nodos. Esto equilibra costo y confiabilidad.
+                </p>
+            </div>
+
+        </aside>
+
+    </main>
+
+    <footer>
+        <p>Trabajo Académico - Ingeniería de Sistemas | Harold García | 2026</p>
+    </footer>
+
+</body>
+</html>

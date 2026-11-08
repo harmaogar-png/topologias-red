@@ -82,3 +82,383 @@ header {
 @media (max-width: 768px) {
     .content-card { grid-template-columns: 1fr; }
 }
+/* --- Estilos para Páginas de Detalle --- */
+.top-nav {
+    background: var(--dark);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.back-btn {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 5px;
+    transition: all 0.3s;
+}
+
+.back-btn:hover { background: var(--primary); border-color: var(--primary); }
+
+.topic-header {
+    background: linear-gradient(135deg, #1e293b 0%, #3b82f6 100%);
+    color: white;
+    padding: 3rem 0;
+    text-align: center;
+}
+
+.topic-header h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+.subtitle { font-size: 1.2rem; opacity: 0.9; }
+
+.detail-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* 2 partes contenido, 1 parte media */
+    gap: 2rem;
+    padding: 3rem 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.edu-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    margin-bottom: 2rem;
+    border-left: 5px solid var(--primary);
+}
+
+.highlight-card { border-left-color: #10b981; background: #f0fdf4; }
+
+.feature-list { list-style: none; padding: 0; }
+.feature-list li { margin-bottom: 1rem; padding-left: 1.5rem; position: relative; }
+.feature-list li i { position: absolute; left: 0; top: 4px; color: var(--primary); }
+
+.media-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.main-diagram { width: 100%; border-radius: 10px; margin-bottom: 1rem; }
+.caption { font-size: 0.85rem; color: #64748b; font-style: italic; }
+
+.fun-fact { background: #fffbeb; border-left: 5px solid #f59e0b; }
+
+@media (max-width: 768px) {
+    .detail-layout { grid-template-columns: 1fr; }
+    .topic-header h1 { font-size: 1.8rem; }
+}
+/* === ESTILOS ESPECÍFICOS PARA INDEX.HTML === */
+
+/* Navegación superior con enlaces */
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: all 0.3s;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    background: var(--primary);
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(135deg, #1e293b 0%, #2563eb 50%, #1e293b 100%);
+    color: white;
+    padding: 5rem 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="1" fill="rgba(255,255,255,0.1)"/></svg>') repeat;
+    opacity: 0.3;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero-section h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    opacity: 0.9;
+    margin-bottom: 1.5rem;
+}
+
+.hero-desc {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+    opacity: 0.85;
+}
+
+.btn-primary {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    background: white;
+    color: var(--primary);
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: all 0.3s;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+
+/* Secciones generales */
+.section-padding {
+    padding: 4rem 1rem;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.section-header h2 {
+    font-size: 2.2rem;
+    color: var(--dark);
+    margin-bottom: 1rem;
+}
+
+.section-header p {
+    color: #64748b;
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Tarjetas de Topología Mejoradas */
+.topology-card {
+    border-top: 4px solid var(--primary);
+    transition: all 0.3s ease;
+}
+
+.topology-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(37, 99, 235, 0.2);
+}
+
+.card-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    font-size: 1.8rem;
+    color: white;
+}
+
+.star-icon { background: linear-gradient(135deg, #f59e0b, #d97706); }
+.mesh-icon { background: linear-gradient(135deg, #8b5cf6, #6d28d9); }
+.bus-icon { background: linear-gradient(135deg, #10b981, #059669); }
+.ring-icon { background: linear-gradient(135deg, #ef4444, #dc2626); }
+
+.card-tags {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+}
+
+.card-tags li {
+    background: #f1f5f9;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    color: #475569;
+}
+
+.card-tags i {
+    color: var(--primary);
+    margin-right: 0.3rem;
+}
+
+.btn-detail {
+    display: inline-block;
+    padding: 0.8rem 1.8rem;
+    background: var(--primary);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s;
+    margin-top: 0.5rem;
+}
+
+.btn-detail:hover {
+    background: #1d4ed8;
+    transform: scale(1.05);
+}
+
+/* Sección Normativa TIA-569 */
+.normativa-section {
+    background: #f8fafc;
+    padding: 4rem 0;
+}
+
+.normativa-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.normativa-content h2 {
+    font-size: 2rem;
+    color: var(--dark);
+    margin-bottom: 1rem;
+}
+
+.normativa-content > p {
+    color: #475569;
+    font-size: 1.1rem;
+    margin-bottom: 2.5rem;
+    line-height: 1.7;
+}
+
+.normativa-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.norma-item {
+    background: white;
+    padding: 2rem 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    transition: transform 0.3s;
+}
+
+.norma-item:hover {
+    transform: translateY(-5px);
+}
+
+.norma-item i {
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+.norma-item h4 {
+    color: var(--dark);
+    margin-bottom: 0.8rem;
+    font-size: 1.1rem;
+}
+
+.norma-item p {
+    color: #64748b;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.normativa-note {
+    font-style: italic;
+    color: #64748b;
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background: white;
+    border-left: 4px solid var(--primary);
+    border-radius: 0 8px 8px 0;
+    text-align: left;
+}
+
+/* Footer Profesional */
+footer {
+    background: var(--dark);
+    color: white;
+    padding: 3rem 0 0;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem 2rem;
+}
+
+.footer-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--primary);
+}
+
+.footer-info p {
+    margin-bottom: 0.5rem;
+    opacity: 0.85;
+    line-height: 1.6;
+}
+
+.footer-contact p {
+    margin-bottom: 0.8rem;
+    opacity: 0.85;
+}
+
+.footer-contact i {
+    color: var(--primary);
+    margin-right: 0.5rem;
+}
+
+.footer-bottom {
+    background: #0f172a;
+    text-align: center;
+    padding: 1.5rem;
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+
+/* Responsive Index */
+@media (max-width: 768px) {
+    .nav-links { display: none; } /* En móvil ocultamos links superiores para simplificar */
+    
+    .hero-section h1 { font-size: 2rem; }
+    .hero-subtitle { font-size: 1.2rem; }
+    
+    .footer-content { grid-template-columns: 1fr; text-align: center; }
+    
+    .menu-grid { grid-template-columns: 1fr; }
+}

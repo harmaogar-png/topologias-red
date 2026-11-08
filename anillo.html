@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Topología Anillo | NetTopology.Edu</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Navegación Superior -->
+    <nav class="top-nav">
+        <div class="logo">NetTopology<span>.Edu</span></div>
+        <a href="index.html" class="back-btn"><i class="fas fa-arrow-left"></i> Volver al Menú</a>
+    </nav>
+
+    <!-- Encabezado -->
+    <header class="topic-header">
+        <div class="container">
+            <h1><i class="fas fa-ring"></i> Topología Anillo</h1>
+            <p class="subtitle">Flujo de datos determinista mediante paso de testigo</p>
+        </div>
+    </header>
+
+    <main class="container detail-layout">
+        
+        <!-- Columna Izquierda: Contenido Educativo -->
+        <section class="content-column">
+            
+            <!-- 1. Definición Técnica -->
+            <article class="edu-card">
+                <h2><i class="fas fa-book-open"></i> ¿Qué es exactamente?</h2>
+                <p>
+                    La topología anillo conecta cada nodo con exactamente otros dos nodos, formando un <strong>círculo cerrado o bucle continuo</strong>. Los datos viajan en una sola dirección (unidireccional) o en ambas (bidireccional/dual ring).
+                </p>
+                <p>
+                    A diferencia de Ethernet, aquí no hay colisiones. Se utiliza un mecanismo llamado <strong>"Paso de Testigo" (Token Passing)</strong>: un paquete especial (token) circula por el anillo. Solo el nodo que posee el token tiene permiso para transmitir datos. Cuando termina, pasa el token al siguiente nodo. Esto garantiza un acceso ordenado y predecible al medio.
+                </p>
+            </article>
+
+            <!-- 2. Características Operativas -->
+            <article class="edu-card highlight-card">
+                <h2><i class="fas fa-cogs"></i> Ventajas y Desafíos Técnicos</h2>
+                <p>Fue la base de tecnologías como Token Ring (IBM) y FDDI. Sus características son únicas:</p>
+                <ul class="feature-list">
+                    <li>
+                        <strong><i class="fas fa-check-circle"></i> Rendimiento Determinista:</strong> 
+                        Como no hay colisiones, el tiempo máximo de espera para transmitir es conocido y fijo. Ideal para aplicaciones en tiempo real donde la latencia variable es inaceptable.
+                    </li>
+                    <li>
+                        <strong><i class="fas fa-equals"></i> Equidad en el Acceso:</strong> 
+                        Todos los nodos tienen la misma oportunidad de transmitir. Ningún dispositivo puede "monopolizar" el ancho de banda, a diferencia de CSMA/CD en Bus/Estrella.
+                    </li>
+                    <li>
+                        <strong><i class="fas fa-times-circle"></i> Fragilidad ante Fallos:</strong> 
+                        En un anillo simple, si un solo nodo se apaga o un cable se corta, <strong>todo el anillo se rompe</strong> y la red deja de funcionar. No hay camino alternativo.
+                    </li>
+                    <li>
+                        <strong><i class="fas fa-wrench"></i> Complejidad de Mantenimiento:</strong> 
+                        Agregar o quitar un nodo requiere interrumpir temporalmente el anillo (a menos que se usen switches con bypass automático). El diagnóstico de fallas puede ser lento.
+                    </li>
+                </ul>
+            </article>
+
+            <!-- 3. Caso de Uso Real -->
+            <article class="edu-card">
+                <h2><i class="fas fa-industry"></i> ¿Dónde se usa hoy en día?</h2>
+                <p>
+                    Aunque Token Ring desapareció de las oficinas, el concepto de anillo sobrevive en infraestructuras críticas:
+                </p>
+                <ul style="margin-left: 1.5rem;">
+                    <li><strong>FDDI (Fiber Distributed Data Interface):</strong> Anillos dobles de fibra óptica que conectan campus universitarios y backbones metropolitanos. Si el anillo primario falla, el secundario toma el control automáticamente.</li>
+                    <li><strong>SONET/SDH:</strong> La columna vertebral de las redes de telecomunicaciones globales usa anillos de fibra para transportar voz y datos con protección 1+1.</li>
+                    <li><strong>Automatización Industrial:</strong> Protocolos como PROFIBUS DP o DeviceNet usan topología anillo para conectar PLCs y sensores en líneas de producción.</li>
+                    <li><strong>Redes MAN (Metropolitan Area Networks):</strong> RPR (Resilient Packet Ring) para conectar edificios en una ciudad con alta disponibilidad.</li>
+                </ul>
+            </article>
+
+        </section>
+
+        <!-- Columna Derecha: Visual y Video -->
+        <aside class="media-column">
+            
+            <!-- Diagrama Principal -->
+            <div class="media-card">
+                <h3>Diagrama Físico</h3>
+                <img src="anillo.png" alt="Diagrama Topología Anillo" class="main-diagram">
+                <p class="caption">Los datos circulan en una dirección. Cada nodo regenera la señal antes de pasarla al siguiente.</p>
+            </div>
+
+            <!-- Video Explicativo -->
+            <div class="media-card video-container">
+                <h3>Video Explicativo</h3>
+                <iframe 
+                    width="100%" 
+                    height="315" 
+                    src="https://www.youtube.com/embed/jVjg7EkhrGU" 
+                    title="Topología Anillo Explicada - Paso de Testigo" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+                <p class="caption">Explicación visual del mecanismo de Token Passing y flujo unidireccional.</p>
+            </div>
+
+            <!-- Dato Técnico Pro -->
+            <div class="media-card fun-fact">
+                <h3><i class="fas fa-lightbulb"></i> Dato Técnico Avanzado</h3>
+                <p>
+                    Para solucionar la fragilidad del anillo simple, existe la <strong>Topología de Anillo Dual</strong>. Usa dos anillos físicos que transportan datos en direcciones opuestas. El anillo secundario está normalmente inactivo ("standby"). Si el primario falla, los nodos detectan la ruptura y reconfiguran automáticamente el tráfico hacia el anillo secundario en milisegundos. Esta es la base de la resiliencia en redes SONET/SDH y FDDI.
+                </p>
+            </div>
+
+        </aside>
+
+    </main>
+
+    <footer>
+        <p>Trabajo Académico - Ingeniería de Sistemas | Harold García | 2026</p>
+    </footer>
+
+</body>
+</html>

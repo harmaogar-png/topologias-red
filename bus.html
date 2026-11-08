@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Topología Bus | NetTopology.Edu</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Navegación Superior -->
+    <nav class="top-nav">
+        <div class="logo">NetTopology<span>.Edu</span></div>
+        <a href="index.html" class="back-btn"><i class="fas fa-arrow-left"></i> Volver al Menú</a>
+    </nav>
+
+    <!-- Encabezado -->
+    <header class="topic-header">
+        <div class="container">
+            <h1><i class="fas fa-grip-lines-vertical"></i> Topología Bus</h1>
+            <p class="subtitle">La arquitectura lineal clásica de redes compartidas</p>
+        </div>
+    </header>
+
+    <main class="container detail-layout">
+        
+        <!-- Columna Izquierda: Contenido Educativo -->
+        <section class="content-column">
+            
+            <!-- 1. Definición Técnica -->
+            <article class="edu-card">
+                <h2><i class="fas fa-book-open"></i> ¿Qué es exactamente?</h2>
+                <p>
+                    La topología bus (o lineal) conecta todos los dispositivos a un <strong>único cable central llamado "backbone" o troncal</strong>. Este cable actúa como el medio de transmisión compartido por toda la red.
+                </p>
+                <p>
+                    Los datos viajan en ambas direcciones a lo largo del backbone. Cada dispositivo "escucha" el tráfico, pero solo acepta los paquetes dirigidos a su dirección MAC específica. En los extremos del cable se colocan <strong>terminadores (resistencias de 50Ω)</strong> para evitar que la señal rebote y cause interferencia.
+                </p>
+            </article>
+
+            <!-- 2. Características Operativas -->
+            <article class="edu-card highlight-card">
+                <h2><i class="fas fa-balance-scale"></i> Ventajas y Desventajas Críticas</h2>
+                <p>Esta topología fue fundamental en los inicios de Ethernet (10Base2/10Base5), pero tiene limitaciones importantes:</p>
+                <ul class="feature-list">
+                    <li>
+                        <strong><i class="fas fa-check-circle"></i> Bajo Costo Inicial:</strong> 
+                        Requiere menos cableado que estrella o malla. Un solo cable coaxial puede conectar decenas de equipos, ideal para presupuestos ajustados o redes temporales.
+                    </li>
+                    <li>
+                        <strong><i class="fas fa-times-circle"></i> Punto Único de Falla Catastrófico:</strong> 
+                        Si el backbone se corta, se desconecta un terminador o hay una mala conexión, <strong>toda la red se cae</strong>. No hay redundancia ni rutas alternas.
+                    </li>
+                    <li>
+                        <strong><i class="fas fa-exclamation-triangle"></i> Colisiones y Degradación:</strong> 
+                        Como el medio es compartido, si dos PCs transmiten al mismo tiempo ocurre una colisión. A mayor número de nodos, más colisiones y menor rendimiento efectivo.
+                    </li>
+                    <li>
+                        <strong><i class="fas fa-search-minus"></i> Dificultad de Diagnóstico:</strong> 
+                        Localizar una falla física requiere revisar segmento por segmento con un tester TDR. No hay LEDs indicadores por nodo como en un switch.
+                    </li>
+                </ul>
+            </article>
+
+            <!-- 3. Caso de Uso Real -->
+            <article class="edu-card">
+                <h2><i class="fas fa-history"></i> ¿Dónde se usaba y dónde persiste?</h2>
+                <p>
+                    Fue el estándar en oficinas pequeñas y laboratorios durante los años 80s y 90s. Hoy en día ha sido reemplazada casi totalmente por la topología Estrella, pero aún puedes encontrarla en:
+                </p>
+                <ul style="margin-left: 1.5rem;">
+                    <li><strong>Sistemas de CCTV analógicos antiguos:</strong> Cámaras conectadas en línea a un DVR.</li>
+                    <li><strong>Redes industriales legacy:</strong> Protocolos como PROFIBUS o CAN bus en maquinaria factory floor.</li>
+                    <li><strong>Conexiones domésticas básicas:</strong> Algunos sistemas de audio multiroom o sensores IoT simples usan variantes de bus.</li>
+                </ul>
+            </article>
+
+        </section>
+
+        <!-- Columna Derecha: Visual y Video -->
+        <aside class="media-column">
+            
+            <!-- Diagrama Principal -->
+            <div class="media-card">
+                <h3>Diagrama Físico</h3>
+                <img src="bus.png" alt="Diagrama Topología Bus" class="main-diagram">
+                <p class="caption">El cable backbone conecta todos los nodos en línea. Nota los terminadores en los extremos.</p>
+            </div>
+
+            <!-- Video Explicativo -->
+            <div class="media-card video-container">
+                <h3>Video Explicativo</h3>
+                <iframe 
+                    width="100%" 
+                    height="315" 
+                    src="https://www.youtube.com/embed/gdseDA_fMyk" 
+                    title="Topología Bus Explicada - Redes" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+                <p class="caption">Visualización del flujo de datos en el backbone y el rol de los terminadores.</p>
+            </div>
+
+            <!-- Dato Técnico Pro -->
+            <div class="media-card fun-fact">
+                <h3><i class="fas fa-lightbulb"></i> Dato Técnico Avanzado</h3>
+                <p>
+                    En Ethernet clásico sobre bus (10Base2), se usaba el protocolo <strong>CSMA/CD</strong> (Carrier Sense Multiple Access with Collision Detection). Las PCs "escuchaban" el cable antes de transmitir; si detectaban señal, esperaban un tiempo aleatorio. El tamaño máximo de un segmento era 185 metros y soportaba máximo 30 nodos. Superar estos límites causaba caída total de la red.
+                </p>
+            </div>
+
+        </aside>
+
+    </main>
+
+    <footer>
+        <p>Trabajo Académico - Ingeniería de Sistemas | Harold García | 2026</p>
+    </footer>
+
+</body>
+</html>
