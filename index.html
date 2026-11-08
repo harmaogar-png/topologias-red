@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Topologías de Red Físicas | Harold García</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo">NetTopology<span>.Edu</span></div>
+        <p class="subtitle">Estrella • Malla • Bus • Anillo</p>
+    </header>
+
+    <main>
+        <nav class="topology-nav">
+            <button class="nav-btn active" data-target="estrella">⭐ Estrella</button>
+            <button class="nav-btn" data-target="malla">🕸️ Malla</button>
+            <button class="nav-btn" data-target="bus">🚌 Bus</button>
+            <button class="nav-btn" data-target="anillo">💍 Anillo</button>
+        </nav>
+
+        <section id="content-display" class="content-card">
+            <div class="visual-area">
+                <img id="topo-img" src="" alt="Diagrama Topología">
+            </div>
+            <div class="info-area">
+                <h2 id="topo-title">Selecciona una Topología</h2>
+                <p id="topo-desc">Explora las características de cada red física.</p>
+                <ul id="topo-features"></ul>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Trabajo Académico - Ingeniería de Sistemas | 2026</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
